@@ -29,4 +29,13 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
+        if (other.gameObject.CompareTag("Pickup"))
+                {
+                     other.gameObject.SetActive(false);
+                }
+    }
+
 }
