@@ -20,9 +20,14 @@ public class PlayerMovement : MonoBehaviour
 
         movement = movement.normalized;
 
-        anim.SetFloat("Horizontal", movement.x);
-        anim.SetFloat("Vertical", movement.y);
-        anim.SetFloat("Speed", movement.sqrMagnitude);
+        if (movement != Vector2.zero) {
+            anim.SetFloat("Horizontal", movement.x);
+            anim.SetFloat("Vertical", movement.y);
+            anim.SetBool("Walking", true);
+        } else {
+            anim.SetBool("Walking", false);
+        }
+        
     }
     void FixedUpdate()
     {
