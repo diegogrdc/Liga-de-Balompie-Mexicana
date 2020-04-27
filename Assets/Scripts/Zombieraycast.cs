@@ -61,12 +61,15 @@ public class Zombieraycast : MonoBehaviour
         float distance = Vector3.Distance(target, transform.position);
         Vector3 dir = (target - transform.position).normalized;
 
-
+        // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
+        //if (target != initialPosition && distance < attackRadius){
+            // Aquí le atacaríamos, pero por ahora simplemente cambiamos la animación
+            //anim.SetFloat("movX", dir.x);
+            //anim.SetFloat("movY", dir.y);
+            //anim.Play("Enemy_Walk", -1, 0);  // Congela la animación de andar
+        //}
         
-        if (target == initialPosition && distance < 0.02f){
-            transform.position = initialPosition; 
-           
-        }
+        
          // Y un debug optativo con una línea hasta el target
         Debug.DrawLine(transform.position, target, Color.green);
     }
@@ -77,7 +80,7 @@ public class Zombieraycast : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRadius);
 
     }
-    
+
     }
 
 
