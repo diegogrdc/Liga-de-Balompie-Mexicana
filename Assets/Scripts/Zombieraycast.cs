@@ -61,16 +61,30 @@ public class Zombieraycast : MonoBehaviour
         float distance = Vector3.Distance(target, transform.position);
         Vector3 dir = (target - transform.position).normalized;
 
-        // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
-        //if (target != initialPosition && distance < attackRadius){
+     // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
+       /* if (target != initialPosition && distance < attackRadius){
             // Aquí le atacaríamos, pero por ahora simplemente cambiamos la animación
-            //anim.SetFloat("movX", dir.x);
-            //anim.SetFloat("movY", dir.y);
-            //anim.Play("Enemy_Walk", -1, 0);  // Congela la animación de andar
+            anim.SetFloat("movX", dir.x);
+            anim.SetFloat("movY", dir.y);
+            anim.Play("Enemy_Walk", -1, 0);  // Congela la animación de andar
+        }*/
+        // En caso contrario nos movemos hacia él
+        //else {
+            rb2d.MovePosition(transform.position + dir * speed * Time.deltaTime);
+
+            // Al movernos establecemos la animación de movimiento
+            /*anim.speed = 1;
+            anim.SetFloat("movX", dir.x);
+            anim.SetFloat("movY", dir.y);
+            anim.SetBool("walking", true);*/
         //}
-        
-        
-         // Y un debug optativo con una línea hasta el target
+
+        // Una última comprobación para evitar bugs forzando la posición inicial
+        if (target == initialPosition && distance < 0.02f){
+            transform.position = initialPosition; 
+            // Y cambiamos la animación de nuevo a Idle
+           // anim.SetBool("walking", false);
+        }
         Debug.DrawLine(transform.position, target, Color.green);
     }
         // Podemos dibujar el radio de visión y ataque sobre la escena dibujando una esfera
@@ -80,8 +94,5 @@ public class Zombieraycast : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRadius);
 
     }
-
-    }
-
 
 }
