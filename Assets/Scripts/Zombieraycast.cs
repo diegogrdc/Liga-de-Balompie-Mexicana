@@ -62,14 +62,14 @@ public class Zombieraycast : MonoBehaviour
         Vector3 dir = (target - transform.position).normalized;
 
      // Si es el enemigo y está en rango de ataque nos paramos y le atacamos
-       /* if (target != initialPosition && distance < attackRadius){
+       if (target != initialPosition && distance < attackRadius){
             // Aquí le atacaríamos, pero por ahora simplemente cambiamos la animación
-            anim.SetFloat("movX", dir.x);
-            anim.SetFloat("movY", dir.y);
-            anim.Play("Enemy_Walk", -1, 0);  // Congela la animación de andar
-        }*/
+            //anim.SetFloat("movX", dir.x);
+            //anim.SetFloat("movY", dir.y);
+            //anim.Play("Enemy_Walk", -1, 0);  // Congela la animación de andar
+        }
         // En caso contrario nos movemos hacia él
-        //else {
+        else {
             rb2d.MovePosition(transform.position + dir * speed * Time.deltaTime);
 
             // Al movernos establecemos la animación de movimiento
@@ -77,7 +77,7 @@ public class Zombieraycast : MonoBehaviour
             anim.SetFloat("movX", dir.x);
             anim.SetFloat("movY", dir.y);
             anim.SetBool("walking", true);*/
-        //}
+        }
 
         // Una última comprobación para evitar bugs forzando la posición inicial
         if (target == initialPosition && distance < 0.02f){
