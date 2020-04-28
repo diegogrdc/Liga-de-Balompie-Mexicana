@@ -132,6 +132,8 @@ GameObject:
   - component: {fileID: 162778167}
   - component: {fileID: 162778169}
   - component: {fileID: 162778168}
+  - component: {fileID: 162778170}
+  - component: {fileID: 162778171}
   m_Layer: 5
   m_Name: Texto Jugar
   m_TagString: Untagged
@@ -277,6 +279,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162778166}
   m_CullTransparentMesh: 0
+--- !u!114 &162778170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162778166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e91ce6dc5644627afc9caf87e6a926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &162778171
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162778166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &353509126
 GameObject:
   m_ObjectHideFlags: 0
