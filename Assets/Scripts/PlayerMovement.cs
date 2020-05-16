@@ -41,6 +41,10 @@ public class PlayerMovement : MonoBehaviour
                 {
                      other.gameObject.SetActive(false);
                 }
+        if (other.gameObject.CompareTag("Zombie"))
+                {
+                    Destroy (this);
+                }
     }
 
 }
