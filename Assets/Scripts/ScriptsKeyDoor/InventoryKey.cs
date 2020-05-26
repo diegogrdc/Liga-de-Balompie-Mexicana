@@ -18,12 +18,15 @@ public class InventoryKey : MonoBehaviour
     }
 
     void Update() {
-    	KeyHolder keyHolder = GameObject.Find("Player").GetComponent<KeyHolder>();
-    	Debug.Log(keyHolder);
-    	if(keyHolder.ContainsKey(this.GetKeyType())) {
-    		rend.enabled = true;
-    	} else {
-    		rend.enabled = false;
-    	}
+        if (GameObject.Find("Player") != null) {
+            KeyHolder keyHolder = GameObject.Find("Player").GetComponent<KeyHolder>();
+            //Debug.Log(keyHolder);
+            if(keyHolder.ContainsKey(this.GetKeyType())) {
+                rend.enabled = true;
+            } else {
+                rend.enabled = false;
+            }
+        }
+    	
     }
 }

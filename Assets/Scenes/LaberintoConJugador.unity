@@ -271,8 +271,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  blood: {fileID: 5630844304004800569, guid: bd41721bf68e7f34ea56517e3f5b77bd, type: 3}
   rb: {fileID: 151282673}
   anim: {fileID: 151282671}
+  alive: 1
 --- !u!50 &151282673
 Rigidbody2D:
   serializedVersion: 4
@@ -1055,7 +1057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 37, y: -23}
+  m_AnchoredPosition: {x: 628, y: -23}
   m_SizeDelta: {x: 181.6, y: 155.9}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &499493028
@@ -1344,7 +1346,7 @@ GameObject:
   - component: {fileID: 592619309}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3485,7 +3487,7 @@ GameObject:
   - component: {fileID: 1370970431}
   m_Layer: 0
   m_Name: ZombieRaycast
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3653,7 +3655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 476.2, y: -346.4}
+  m_AnchoredPosition: {x: 628, y: -346.4}
   m_SizeDelta: {x: 162.7, y: 47.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453415360
