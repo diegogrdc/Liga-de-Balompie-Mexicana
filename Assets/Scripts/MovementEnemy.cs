@@ -5,25 +5,39 @@ using UnityEngine;
 public class MovementEnemy : MonoBehaviour
 {
 
-    static public float speed = 0.02f;
+    static public float speed = 0.02f,last;
     
     public Animator anim;
 
     public Rigidbody2D rb;
 
     void Update() {
-        if( transform.position.x < -2.0 ) {
+        if(Time.timeScale == 0)
+        speed = 0;
+
+        if( transform.position.x < -2.0 && Time.timeScale == 1) {
             speed = 0.02f;
+            last = speed;
             anim.SetFloat("Horizontal",1);
         }
-        if( transform.position.x > 8.0 ) {
+        if( transform.position.x > 8.0 && Time.timeScale == 1) {
             speed = -0.02f;
+            last = speed;
             anim.SetFloat("Horizontal",-1);
         }
+
+        if(transform.position.x > -2.0 && transform.position.x < 8.0 && Time.timeScale == 1){
+            if(last > 0){
+                anim.SetFloat("Horizontal",1);
+            }
+            if(last < 0){
+                anim.SetFloat("Horizontal",-1);
+            }
+            speed = last;
+        }
+
         transform.position += new Vector3( speed , 0.000f , 0.0000f );
-
     }
-
 }
 
 
