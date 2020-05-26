@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour {
 
     private Inventory inventory;
     public GameObject itemButton;
+    public GameObject Sonido;
    // public GameObject effect;
 
     private void Start()
@@ -15,7 +16,9 @@ public class Pickup : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+         Instantiate(Sonido);
         if (other.CompareTag("Player")) {
+           
             // spawn the sun button at the first available inventory slot ! 
 
             for (int i = 0; i < inventory.items.Length; i++)

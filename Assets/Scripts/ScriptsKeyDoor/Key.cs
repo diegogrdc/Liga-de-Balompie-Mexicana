@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Key : MonoBehaviour {
+
+    public GameObject Sonido;
 	
 	[SerializeField] private KeyType keyType;
 	
@@ -15,5 +17,10 @@ public class Key : MonoBehaviour {
 
     public KeyType GetKeyType() {
     	return keyType;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+         Instantiate(Sonido);
     }
 }
