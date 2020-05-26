@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Timer : MonoBehaviour
         CountdownText.text = currentTime.ToString();  
         if (currentTime <= 0 ){
             currentTime = 0;
+             SceneManager.LoadScene("GameOver");
         } 
     }
 }
