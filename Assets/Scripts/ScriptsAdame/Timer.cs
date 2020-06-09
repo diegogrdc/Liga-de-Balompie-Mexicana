@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     float currentTime = 0f;
-    float startingTime = 10f;
+    float startingTime = 60f;
 
     [SerializeField] Text CountdownText;
 
@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
         CountdownText.text = currentTime.ToString();  
         if (currentTime <= 0 ){
             currentTime = 0;
-             SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver");
         } 
     }
 }
