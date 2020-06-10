@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Pickup
   - Enemy
+  - Wall
+  - Pocion
+  - Pollo
   layers:
   - Default
   - TransparentFX

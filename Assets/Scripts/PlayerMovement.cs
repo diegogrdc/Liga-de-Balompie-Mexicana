@@ -1,21 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
-
-    public GameObject blood;
-
     
     public Rigidbody2D rb;
 
     public Animator anim;
 
     public bool alive = true;
+
+    public bool touchingWall = false;
 
     Vector2 movement;
 
@@ -25,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
 
-            movement = movement.normalized;
+            if(!touchingWall) movement = movement.normalized;
 
             if (movement != Vector2.zero) {
                 anim.SetFloat("Horizontal", movement.x);
@@ -42,30 +40,23 @@ public class PlayerMovement : MonoBehaviour
         if (alive) rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D other) 
+    void OnCollisionExit2D(Collision2D other) 
     {
-        //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
-        if (other.gameObject.CompareTag("Pickup"))
+        if (other.gameObject.CompareTag("Wall"))
             {
-                other.gameObject.SetActive(false);
+                touchingWall = false;
             }
     }
 
     void OnCollisionEnter2D(Collision2D col) {
         
-        if (col.gameObject.CompareTag("Enemy"))
+        if (col.gameObject.CompareTag("Wall"))
             {
-                Instantiate(blood, transform.position, Quaternion.identity);
-                alive = false;
-                anim.SetBool("Dead", true);
-                StartCoroutine(GameOver());
+                touchingWall = true;
             }
     }
 
-    IEnumerator GameOver() {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("GameOver");
-    }
+    
 
     
  
