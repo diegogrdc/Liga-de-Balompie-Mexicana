@@ -9,6 +9,7 @@ public class Zombieraycast : MonoBehaviour
     public float attackRadius;
     public float speed;
 
+
     // Variable para guardar al jugador
     GameObject player;
 
@@ -23,7 +24,7 @@ public class Zombieraycast : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
          // Guardamos nuestra posición inicial
-        initialPosition = transform.position;
+        
         
         //anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -32,6 +33,7 @@ public class Zombieraycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        initialPosition = transform.position;
         // Por defecto nuestro target siempre será nuestra posición inicial
         Vector3 target = initialPosition;
          // Comprobamos un Raycast del enemigo hasta el jugador
@@ -81,7 +83,7 @@ public class Zombieraycast : MonoBehaviour
 
         // Una última comprobación para evitar bugs forzando la posición inicial
         if (target == initialPosition && distance < 0.02f){
-            transform.position = initialPosition; 
+             transform.position = initialPosition; 
             // Y cambiamos la animación de nuevo a Idle
            // anim.SetBool("walking", false);
         }
