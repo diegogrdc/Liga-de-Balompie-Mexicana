@@ -26,7 +26,7 @@ public class KeyHolder : MonoBehaviour
     private void OnTriggerEnter2D( Collider2D collider ) {
     	Key key = collider.GetComponent<Key>();
     	if( key != null ) {
-//    		AddKey(key.GetKeyType());
+  		AddKey(key.GetKeyType());
     		Destroy(key.gameObject);
     	}
 
