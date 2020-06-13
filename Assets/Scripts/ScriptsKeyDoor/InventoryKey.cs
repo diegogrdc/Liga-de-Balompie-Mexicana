@@ -19,7 +19,8 @@ public class InventoryKey : MonoBehaviour
     	rend = GetComponent<Renderer>();
         rend.enabled = false;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
+        offsetX = -7f;
+        offsetY = 3.8f;
     }
 
     void Update() {
