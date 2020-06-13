@@ -1,8 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryKey : MonoBehaviour
+public class RedKey : MonoBehaviour
 {
     [SerializeField] private Key.KeyType keyType;
     public Renderer rend;
@@ -22,8 +22,9 @@ public class InventoryKey : MonoBehaviour
         rend.enabled = false;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         offsetX = -7f;
-        offsetY = 3.8f; 
-               
+        offsetY = 2.8f; 
+        
+        
     }
 
     void Update() {

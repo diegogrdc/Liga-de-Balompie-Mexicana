@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7656962941156903947}
   - component: {fileID: 7656962941156903946}
+  - component: {fileID: 7178282545268102267}
   - component: {fileID: 7656962941156903949}
   m_Layer: 0
   m_Name: RedInventoryKey
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7656962941156903949
+--- !u!114 &7178282545268102267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,6 +92,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 7656962941156903948}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd46fc35440241f4e8b047b1b9f186c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyType: 0
+  rend: {fileID: 0}
+  offsetY: 0
+  offsetX: 0
+  nombre: {fileID: 0}
+--- !u!114 &7656962941156903949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7656962941156903948}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e86c4f0b7c4854830a80c27900840a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -98,3 +116,4 @@ MonoBehaviour:
   rend: {fileID: 0}
   offsetY: 0
   offsetX: 0
+  nombre: {fileID: 0}

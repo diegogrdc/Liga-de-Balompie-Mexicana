@@ -5144,6 +5144,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedInventoryKey
       objectReference: {fileID: 0}
+    - target: {fileID: 7656962941156903949, guid: 639b24f40e4e943c597fdb631b6bc688,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639b24f40e4e943c597fdb631b6bc688, type: 3}
 --- !u!1001 &7903170682882244133
