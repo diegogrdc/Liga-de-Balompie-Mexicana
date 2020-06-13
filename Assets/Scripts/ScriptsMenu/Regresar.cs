@@ -7,6 +7,5 @@ public class Regresar : MonoBehaviour
 {
      public void Regresa(){
             SceneManager.LoadScene("MainMenu");
-        }
-        
+        } 
 }
