@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementEnemy : MonoBehaviour
+public class Zombie31 : MonoBehaviour
 {
 
     static public float speed = 0.02f,last;
